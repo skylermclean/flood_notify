@@ -55,4 +55,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  resource :messages do
+        collection do
+              post 'reply'
+            end
+  end
 end
