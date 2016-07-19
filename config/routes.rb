@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messages/notification'
+
   get 'messages/reply'
 
   # The priority is based upon order of creation: first created -> highest priority.

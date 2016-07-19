@@ -14,6 +14,19 @@ class MessagesController < ApplicationController
     
   end
 
+  def notification
+    message_body = params["Body"]
+    from_number = params["From"]
+    boot_twilio
+    sms = @client.messages.create(
+      from: Rails.application.secrets.twilio_number,
+      to: 16263750969,
+      body: "Hello there, you have a missing order . #{message_body}."
+    )
+
+  end
+
+
   private
 
   def boot_twilio
