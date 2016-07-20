@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messages/notificationMissingOrder'
+
   get 'messages/notification'
 
   get 'messages/reply'
