@@ -17,11 +17,12 @@ class MessagesController < ApplicationController
   def notification
     message_body = params["Body"]
     from_number = params["From"]
+    message = params[:msg]
     boot_twilio
     sms = @client.messages.create(
       from: Rails.application.secrets.twilio_number,
       to: 16263750969,
-      body: "Hello there, you have a missing order . #{message_body}."
+      body: "Hello there, you have a missing order . #{message}."
     )
 
   end
@@ -34,7 +35,7 @@ class MessagesController < ApplicationController
     sms = @client.messages.create(
       from: Rails.application.secrets.twilio_number,
       to: 16263750969,
-      body: "Hello there, you have a missing order from #{message_body}."
+      body: "The test #{message_body} failed. Check DataFlood for details"
     )
 
   end
