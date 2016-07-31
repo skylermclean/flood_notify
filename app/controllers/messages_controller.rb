@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     boot_twilio
     sms = @client.messages.create(
       from: Rails.application.secrets.twilio_number,
-      to: 16263750969,
+      to: 16266168993,
       body: "Hello there, you said, #{message_body}."
     )
     
@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
     boot_twilio
     sms = @client.messages.create(
       from: Rails.application.secrets.twilio_number,
-      to: 16263750969,
+      to: 16266168993,
       body: "Hello there, you have a missing order . #{message}."
     )
 
@@ -34,7 +34,7 @@ class MessagesController < ApplicationController
     boot_twilio
     sms = @client.messages.create(
       from: Rails.application.secrets.twilio_number,
-      to: 16263750969,
+      to: 16266168993,
       body: "The test #{message_body} failed. Check DataFlood for details"
     )
 
