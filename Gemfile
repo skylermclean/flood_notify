@@ -48,6 +48,8 @@ end
 group :production do
   # Use postgres for production
   gem 'pg'
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
 
 end
 
